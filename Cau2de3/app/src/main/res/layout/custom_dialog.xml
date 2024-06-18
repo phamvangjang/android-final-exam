@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập Thông Tin Sinh Viên"
+        android:textSize="23sp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/backgroundtop"
+        android:drawableRight="@drawable/baseline_close_24"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="Name:"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="Class:"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/edtClass"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="Code:"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/edtCode"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+
+            >
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="130dp"
+                android:backgroundTint="#009688"
+                android:layout_height="wrap_content"
+                android:text="LƯU LẠI" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="130dp"
+
+                android:backgroundTint="#F44336"
+
+                android:layout_height="wrap_content"
+                android:text="HỦY" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
