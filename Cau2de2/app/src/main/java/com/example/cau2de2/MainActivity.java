@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         edtName.setEnabled(false);
 
         EditText edtPrice = dialog.findViewById(R.id.edtPrice);
-        edtPrice.setText(String.valueOf(p.getProductCode()));
+        edtPrice.setText(String.valueOf(p.getProductPrice()));
         edtPrice.setEnabled(false);
 
         //handle button delete

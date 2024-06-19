@@ -1,9 +1,7 @@
-package com.example.cau2de4;
+package com.example.cau2de5;
 
 import android.app.Dialog;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -18,18 +16,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.cau2de4.adapter.productAdapter;
-import com.example.cau2de4.database.Database;
-import com.example.cau2de4.databinding.ActivityMainBinding;
-import com.example.cau2de4.model.Product;
+import com.example.cau2de5.adapter.bookAdapter;
+import com.example.cau2de5.database.Database;
+import com.example.cau2de5.databinding.ActivityMainBinding;
+import com.example.cau2de5.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    productAdapter adapter;
-    ArrayList<Product> products;
+    bookAdapter adapter;
+    ArrayList<Book> books;
     Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        binding.lvProduct.setOnItemLongClickListener((parent, view, position, id) -> {
-            Product p =products.get(position);
+        binding.lvBook.setOnItemLongClickListener((parent, view, position, id) -> {
+            Book p =books.get(position);
             openStudentDialog(p);
             return false;
         });
     }
 
-    private void openStudentDialog(Product p) {
+    private void openStudentDialog(Book p) {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_dialog);
 
@@ -94,18 +92,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        adapter = new productAdapter(MainActivity.this, R.layout.list_item, getDataFromDb());
-        binding.lvProduct.setAdapter(adapter);
+        adapter = new bookAdapter(MainActivity.this, R.layout.list_item, getDataFromDb());
+        binding.lvBook.setAdapter(adapter);
     }
 
-    private List<Product> getDataFromDb() {
-        products = new ArrayList<>();
+    private List<Book> getDataFromDb() {
+        books = new ArrayList<>();
         Cursor cursor = db.queryData(" SELECT * FROM " + db.TBL_NAME);
         while (cursor.moveToNext()){
-            products.add(new Product(cursor.getString(0), cursor.getString(1), cursor.getDouble(2)));
+            books.add(new Book(cursor.getString(0), cursor.getString(1), cursor.getDouble(2)));
         }
         cursor.close();
-        return products;
+        return books;
     }
 
     private void prepareDb() {
