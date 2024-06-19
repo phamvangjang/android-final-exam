@@ -78,7 +78,7 @@ public class Database extends SQLiteOpenHelper {
         }
     }
     //update data
-    public boolean updateData(String code, String name, String price){
+    public boolean updateData(String code, String name, Double price){
         SQLiteDatabase db = getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_CODE, code);
